@@ -38,8 +38,14 @@ spec:
         - name: revision
           value: $(params.git-revision)
       taskRef:
-        kind: ClusterTask
-        name: git-clone
+        resolver: cluster
+        params:
+          - name: kind
+            value: task
+          - name: name
+            value: git-clone
+          - name: namespace
+            value: openshift-pipelines
       workspaces:
         - name: output
           workspace: source-output
@@ -93,8 +99,14 @@ spec:
       runAfter:
         - package
       taskRef:
-        kind: ClusterTask
-        name: buildah
+        resolver: cluster
+        params:
+          - name: kind
+            value: task
+          - name: name
+            value: buildah
+          - name: namespace
+            value: openshift-pipelines
       workspaces:
         - name: source
           workspace: source-output
