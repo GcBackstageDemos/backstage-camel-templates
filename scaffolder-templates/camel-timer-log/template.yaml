@@ -109,7 +109,7 @@ spec:
           source_repo: "${{ parameters.repo.host }}/${{ parameters.repo.owner }}/${{ parameters.component_id }}"
 
     - id: publish
-      name: Publish
+      name: Publish App Source Code
       action: publish:github
       input:
         repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}"
@@ -142,11 +142,10 @@ spec:
         targetPath: ./tenant-gitops
 
     - id: publish-gitops
-      name: Publishing to Resource Repository
+      name: Publish GitOps Source Code
       action: publish:github
       input:
         repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}-gitops"
-        title: gitops resources for '${{ parameters.component_id }}'
         description: gitops resources for '${{ parameters.component_id }}' 
         sourcePath: ./tenant-gitops
         repoVisibility: public
