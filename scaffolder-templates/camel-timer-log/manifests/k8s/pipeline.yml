@@ -5,6 +5,7 @@ metadata:
   labels:
     type: pipeline
     backstage.io/kubernetes-id: ${{values.artifact_id}}
+    app.kubernetes.io/instance: ${{values.component_id}}
 spec:
   params:
     - default: '${{values.source_repo}}'
