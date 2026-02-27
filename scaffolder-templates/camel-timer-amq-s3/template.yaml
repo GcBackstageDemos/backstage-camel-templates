@@ -114,6 +114,7 @@ spec:
       input:
         repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}"
         repoVisibility: public
+        description: EXAMPLE - ${{ parameters.description }}
         defaultBranch: main
 
     - id: register
@@ -146,7 +147,7 @@ spec:
       action: publish:github
       input:
         repoUrl: "${{ parameters.repo.host }}?owner=${{ parameters.repo.owner }}&repo=${{parameters.component_id}}-gitops"
-        description: gitops resources for '${{ parameters.component_id }}' 
+        description: EXAMPLE - gitops resources for '${{ parameters.component_id }}' 
         sourcePath: ./tenant-gitops
         repoVisibility: public
         defaultBranch: main
