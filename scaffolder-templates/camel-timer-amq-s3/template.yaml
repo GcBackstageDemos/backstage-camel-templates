@@ -10,7 +10,7 @@ metadata:
     - quarkus
     - maven
 spec:
-  owner: camel-examples
+  owner: group:default/rhdh-devs
   type: service
   parameters:
     - title: Provide Information for Application
